@@ -1,7 +1,10 @@
 <h2>Paises</h2>
 <hr>
 
-<ul class="list-group">
+<ul
+  *ngFor="let option of options"
+  class="list-group"
+>
 
   <!-- <li
     routerLink=""
@@ -27,21 +30,21 @@
   >
     Contact Page
   </li> -->
-
+  
   <li
-    routerLink="countries/by-capital"
-    routerLinkActive="active"
+    [routerLink]="option.routerLink"
+    [routerLinkActive]="option.routerLinkActive"
     class="list-group-item"
   >
-    By Capital
+    {{ option.name }}
   </li>
 
-  <li
+  <!-- <li
     routerLink="countries/by-country"
     routerLinkActive="active"
     class="list-group-item"
   >
-    By Country
+    Por País
   </li>
 
   <li
@@ -49,7 +52,7 @@
     routerLinkActive="active"
     class="list-group-item"
   >
-    By Region
-  </li>
+    Por Región
+  </li> -->
 
 </ul>
